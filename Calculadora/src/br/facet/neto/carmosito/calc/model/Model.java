@@ -1,5 +1,5 @@
-
-public class Calculadora
+package br.facet.neto.carmosito.calc.model;
+public class Model
 {
     public double soma(double num1, double num2)
     {

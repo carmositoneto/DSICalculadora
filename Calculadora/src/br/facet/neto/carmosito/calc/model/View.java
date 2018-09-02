@@ -1,3 +1,5 @@
+package br.facet.neto.carmosito.calc.model;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -13,10 +15,9 @@ import java.awt.Font;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
-/** @author Carmo 
- * Uma classe 
- *  */
-public class CalcTela extends JFrame
+/** @author Carmo Uma classe onde é criado as interfaces gráficas do projeto
+ *         calculadora */
+public class View extends JFrame
 {
     JPanel panel_result = new JPanel();
     JPanel panel_botoes = new JPanel();
@@ -38,11 +39,11 @@ public class CalcTela extends JFrame
     JButton buttonSoma = new JButton("+");
     JLabel lblResultado = new JLabel("");
     private float valorInicial, valorFinal, sinal;
-    private Calculadora calculadora = new Calculadora();
+    private Model calculadora = new Model();
     JPanel panelPrincipal = new JPanel();
     String s;
     
-    public CalcTela()
+    public View()
     {
         setMinimumSize(new Dimension(350, 450));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -84,8 +85,6 @@ public class CalcTela extends JFrame
             public void actionPerformed(ActionEvent arg0)
             {
                 s = ((JButton) arg0.getSource()).getText();
-                //System.out.println("ESTE É O COMANDO " + s);
-                //
                 valorInicial = Float.parseFloat(lblResultado.getText());
                 lblResultado.setText("");
             }
@@ -136,11 +135,11 @@ public class CalcTela extends JFrame
         //
     }
     
-    /** 
-     * @author Carmo 
-     * Método onde é realizada a chamada para a Classe Calculadora, onde será efetuado o cálculo pedido.
-     * @param O primeiro parâmetro pedido é o valor que será pressionado antes do sinal de operação e o segundo parâmetro é o valor pressionado após o sinal da operção.
-     * */
+    /** @author Carmo Método onde é realizada a chamada para a Classe
+     *         Calculadora, onde será efetuado o cálculo pedido.
+     * @param O primeiro parâmetro pedido é o valor que será pressionado antes
+     *        do sinal de operação e o segundo parâmetro é o valor pressionado
+     *        após o sinal da operção. */
     public void calcular(float valorInicial, float valorFinal)
     {
         if (s.equals("+"))
@@ -166,11 +165,5 @@ public class CalcTela extends JFrame
                 lblResultado.setText("" + calculadora.divisao(valorInicial, valorFinal));
             }
         }
-    }
-    
-    public static void main(String[] args)
-    {
-        CalcTela mainwindow = new CalcTela();
-        mainwindow.setVisible(true);
     }
 }
