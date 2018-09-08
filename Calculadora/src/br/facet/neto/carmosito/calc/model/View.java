@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.JScrollPane;
 
 /** @author Carmo Uma classe onde é criado as interfaces gráficas do projeto
  *         calculadora */
@@ -40,8 +41,9 @@ public class View extends JFrame
     JLabel lblResultado = new JLabel("");
     float valorInicial, valorFinal;
     JPanel panelPrincipal = new JPanel();
-    public static Control control = new Control();
+    public static ControlToModel controlToModel = new ControlToModel();
     String sinal;
+    private final JLabel lblEqucao = new JLabel("");
     
     public View()
     {
@@ -54,10 +56,13 @@ public class View extends JFrame
         panel_result.setBorder(new EmptyBorder(8, 8, 8, 8));
         panel_result.setBackground(Color.WHITE);
         panelPrincipal.add(panel_result, BorderLayout.NORTH);
-        panel_result.setLayout(new MigLayout("", "[284px]", "[40px]"));
-        lblResultado.setFont(new Font("Yu Gothic Medium", Font.PLAIN, 20));
+        panel_result.setLayout(new MigLayout("", "[318px]", "[30px][30px]"));
+        lblEqucao.setFont(new Font("Yu Gothic Medium", Font.PLAIN, 15));
+        lblEqucao.setHorizontalAlignment(SwingConstants.RIGHT);
+        panel_result.add(lblEqucao, "cell 0 0,growx,aligny top");
+        lblResultado.setFont(new Font("Yu Gothic Medium", Font.PLAIN, 15));
         lblResultado.setHorizontalAlignment(SwingConstants.RIGHT);
-        panel_result.add(lblResultado, "cell 0 0,grow");
+        panel_result.add(lblResultado, "cell 0 1,growx,aligny top");
         panel_botoes.setBorder(new EmptyBorder(7, 7, 7, 7));
         panelPrincipal.add(panel_botoes, BorderLayout.CENTER);
         panel_botoes.setLayout(new GridLayout(4, 4, 5, 5));
@@ -85,6 +90,7 @@ public class View extends JFrame
             public void actionPerformed(ActionEvent arg0)
             {
                 sinal = ((JButton) arg0.getSource()).getText();
+                lblEqucao.setText(lblEqucao.getText() + sinal);
                 valorInicial = Float.parseFloat(lblResultado.getText());
                 lblResultado.setText("");
             }
@@ -100,6 +106,7 @@ public class View extends JFrame
         {
             public void actionPerformed(ActionEvent arg0)
             {
+                lblEqucao.setText(lblEqucao.getText() + ((JButton) arg0.getSource()).getText());
                 lblResultado.setText(lblResultado.getText() + ((JButton) arg0.getSource()).getText());
             }
         };
@@ -119,6 +126,7 @@ public class View extends JFrame
             public void actionPerformed(ActionEvent arg0)
             {
                 lblResultado.setText("");
+                lblEqucao.setText("");
             }
         });
         buttonIgual.addActionListener(new ActionListener()
@@ -126,7 +134,7 @@ public class View extends JFrame
             public void actionPerformed(ActionEvent arg0)
             {
                 valorFinal = Float.parseFloat(lblResultado.getText());
-                lblResultado.setText(control.calcular(valorInicial, valorFinal, sinal));
+                lblResultado.setText(controlToModel.calcular(valorInicial, valorFinal, sinal));
             }
         });
         //
@@ -134,36 +142,4 @@ public class View extends JFrame
         setLocationRelativeTo(null);
         //
     }
-    //    
-    //    /** @author Carmo Método onde é realizada a chamada para a Classe
-    //     *         Calculadora, onde será efetuado o cálculo pedido.
-    //     * @param O primeiro parâmetro pedido é o valor que será pressionado antes
-    //     *        do sinal de operação e o segundo parâmetro é o valor pressionado
-    //     *        após o sinal da operção. */
-    //    public void calcular(float valorInicial, float valorFinal)
-    //    {
-    //        if (s.equals("+"))
-    //        {
-    //            lblResultado.setText("" + calculadora.soma(valorInicial, valorFinal));
-    //        }
-    //        else if (s.equals("-"))
-    //        {
-    //            lblResultado.setText("" + calculadora.subtracao(valorInicial, valorFinal));
-    //        }
-    //        else if (s.equals("*"))
-    //        {
-    //            lblResultado.setText("" + calculadora.multiplicacao(valorInicial, valorFinal));
-    //        }
-    //        else if (s.equals("/"))
-    //        {
-    //            if (calculadora.divisao(valorInicial, valorFinal) == Float.POSITIVE_INFINITY || calculadora.divisao(valorInicial, valorFinal) == Float.NEGATIVE_INFINITY)
-    //            {
-    //                lblResultado.setText("Não é possivel dividir por zero!");
-    //            }
-    //            else
-    //            {
-    //                lblResultado.setText("" + calculadora.divisao(valorInicial, valorFinal));
-    //            }
-    //        }
-    //    }
 }
