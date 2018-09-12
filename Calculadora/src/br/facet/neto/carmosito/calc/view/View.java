@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import br.facet.neto.carmosito.calc.control.Control;
 import br.facet.neto.carmosito.calc.model.Model;
 import net.miginfocom.swing.MigLayout;
 
@@ -21,6 +22,7 @@ import net.miginfocom.swing.MigLayout;
 public class View extends JFrame
 {
     public static Model model = new Model();
+    public static Control control = new Control();
     JPanel panel_result = new JPanel();
     JPanel panel_botoes = new JPanel();
     JButton button0 = new JButton("0");
@@ -83,6 +85,16 @@ public class View extends JFrame
         panel_botoes.add(buttonIgual);
         panel_botoes.add(buttonSoma);
         //
+        ActionListener al = new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent arg0)
+            {
+                String botao = ((JButton) arg0.getSource()).getText();
+                control.processaBotao(botao);
+            }
+        };
+        //
         //OPERADORES//
         //
         ActionListener actionOperadores = new ActionListener()
@@ -95,10 +107,10 @@ public class View extends JFrame
                 lblResultado.setText("");
             }
         };
-        buttonDiv.addActionListener(actionOperadores);
-        buttonMult.addActionListener(actionOperadores);
-        buttonSub.addActionListener(actionOperadores);
-        buttonSoma.addActionListener(actionOperadores);
+        buttonDiv.addActionListener (al);
+        buttonMult.addActionListener(al);
+        buttonSub.addActionListener (al);
+        buttonSoma.addActionListener(al);
         //
         //NUMERADORES//
         //
@@ -110,16 +122,16 @@ public class View extends JFrame
                 lblResultado.setText(lblResultado.getText() + ((JButton) arg0.getSource()).getText());
             }
         };
-        button0.addActionListener(actionNumeros);
-        button1.addActionListener(actionNumeros);
-        button2.addActionListener(actionNumeros);
-        button3.addActionListener(actionNumeros);
-        button4.addActionListener(actionNumeros);
-        button5.addActionListener(actionNumeros);
-        button6.addActionListener(actionNumeros);
-        button7.addActionListener(actionNumeros);
-        button8.addActionListener(actionNumeros);
-        button9.addActionListener(actionNumeros);
+        button0.addActionListener(al);
+        button1.addActionListener(al);
+        button2.addActionListener(al);
+        button3.addActionListener(al);
+        button4.addActionListener(al);
+        button5.addActionListener(al);
+        button6.addActionListener(al);
+        button7.addActionListener(al);
+        button8.addActionListener(al);
+        button9.addActionListener(al);
         //
         buttonLimpar.addActionListener(new ActionListener()
         {
