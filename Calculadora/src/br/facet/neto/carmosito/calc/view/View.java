@@ -1,4 +1,4 @@
-package br.facet.neto.carmosito.calc.model;
+package br.facet.neto.carmosito.calc.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,37 +13,37 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import br.facet.neto.carmosito.calc.model.Model;
 import net.miginfocom.swing.MigLayout;
-import javax.swing.JScrollPane;
 
 /** @author Carmo Uma classe onde é criado as interfaces gráficas do projeto
  *         calculadora */
 public class View extends JFrame
 {
+    public static Model model = new Model();
     JPanel panel_result = new JPanel();
     JPanel panel_botoes = new JPanel();
+    JButton button0 = new JButton("0");
+    JButton button1 = new JButton("1");
+    JButton button2 = new JButton("2");
+    JButton button3 = new JButton("3");
+    JButton button4 = new JButton("4");
+    JButton button5 = new JButton("5");
+    JButton button6 = new JButton("6");
     JButton button7 = new JButton("7");
     JButton button8 = new JButton("8");
     JButton button9 = new JButton("9");
     JButton buttonDiv = new JButton("/");
-    JButton button4 = new JButton("4");
-    JButton button5 = new JButton("5");
-    JButton button6 = new JButton("6");
-    JButton buttonMult = new JButton("*");
-    JButton button1 = new JButton("1");
-    JButton button2 = new JButton("2");
+    JButton buttonSoma = new JButton("+");
     JButton buttonSub = new JButton("-");
-    JButton button3 = new JButton("3");
-    JButton button0 = new JButton("0");
+    JButton buttonMult = new JButton("*");
     JButton buttonLimpar = new JButton("C");
     JButton buttonIgual = new JButton("=");
-    JButton buttonSoma = new JButton("+");
+    JPanel panelPrincipal = new JPanel();
     JLabel lblResultado = new JLabel("");
     float valorInicial, valorFinal;
-    JPanel panelPrincipal = new JPanel();
-    public static ControlToModel controlToModel = new ControlToModel();
-    String sinal;
     private final JLabel lblEqucao = new JLabel("");
+    String sinal;
     
     public View()
     {
@@ -134,7 +134,7 @@ public class View extends JFrame
             public void actionPerformed(ActionEvent arg0)
             {
                 valorFinal = Float.parseFloat(lblResultado.getText());
-                lblResultado.setText(controlToModel.calcular(valorInicial, valorFinal, sinal));
+                lblResultado.setText(model.calcular(valorInicial, valorFinal, sinal));
             }
         });
         //
