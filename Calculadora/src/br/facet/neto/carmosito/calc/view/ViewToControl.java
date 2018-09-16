@@ -1,4 +1,4 @@
-package br.facet.neto.carmosito.calc.control;
+package br.facet.neto.carmosito.calc.view;
 
 public interface ViewToControl
 {

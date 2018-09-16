@@ -1,6 +1,12 @@
 package br.facet.neto.carmosito.calc.model;
-public class Model
+
+import br.facet.neto.carmosito.calc.control.Control;
+import br.facet.neto.carmosito.calc.control.ControlToModel;
+
+public class Model implements ControlToModel
 {
+    public static Control control = new Control();
+    
     private double soma(double num1, double num2)
     {
         double resul = 0;
@@ -39,7 +45,7 @@ public class Model
      *        do sinal de operação e o segundo parâmetro é o valor pressionado
      *        após o sinal da operção. */
     // ******* COLOCAR NO MODEL ****** // INTERFACE CONTROLE MODEL
-    public String calcular(double valorInicial, double valorFinal, String sinal)
+    public void calcular(double valorInicial, double valorFinal, String sinal)
     {
         String resul = "";
         switch (sinal)
@@ -66,6 +72,6 @@ public class Model
             default:
                 break;
         }
-        return resul;
+        control.processaResultado(resul);
     }
 }

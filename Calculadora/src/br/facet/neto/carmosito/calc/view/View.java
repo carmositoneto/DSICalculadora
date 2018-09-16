@@ -14,12 +14,13 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import br.facet.neto.carmosito.calc.control.Control;
+import br.facet.neto.carmosito.calc.control.ControlToView;
 import br.facet.neto.carmosito.calc.model.Model;
 import net.miginfocom.swing.MigLayout;
 
 /** @author Carmo Uma classe onde é criado as interfaces gráficas do projeto
  *         calculadora */
-public class View extends JFrame
+public class View extends JFrame implements ControlToView
 {
     public static Model model = new Model();
     public static Control control = new Control();
@@ -43,8 +44,8 @@ public class View extends JFrame
     JButton buttonIgual = new JButton("=");
     JPanel panelPrincipal = new JPanel();
     JLabel lblResultado = new JLabel("");
+    JLabel lblEqucao = new JLabel("");
     float valorInicial, valorFinal;
-    private final JLabel lblEqucao = new JLabel("");
     String sinal;
     
     public View()
@@ -94,34 +95,10 @@ public class View extends JFrame
                 control.processaBotao(botao);
             }
         };
-        //
-        //OPERADORES//
-        //
-        ActionListener actionOperadores = new ActionListener()
-        {
-            public void actionPerformed(ActionEvent arg0)
-            {
-                sinal = ((JButton) arg0.getSource()).getText();
-                lblEqucao.setText(lblEqucao.getText() + sinal);
-                valorInicial = Float.parseFloat(lblResultado.getText());
-                lblResultado.setText("");
-            }
-        };
-        buttonDiv.addActionListener (al);
+        buttonDiv.addActionListener(al);
         buttonMult.addActionListener(al);
-        buttonSub.addActionListener (al);
+        buttonSub.addActionListener(al);
         buttonSoma.addActionListener(al);
-        //
-        //NUMERADORES//
-        //
-        ActionListener actionNumeros = new ActionListener()
-        {
-            public void actionPerformed(ActionEvent arg0)
-            {
-                lblEqucao.setText(lblEqucao.getText() + ((JButton) arg0.getSource()).getText());
-                lblResultado.setText(lblResultado.getText() + ((JButton) arg0.getSource()).getText());
-            }
-        };
         button0.addActionListener(al);
         button1.addActionListener(al);
         button2.addActionListener(al);
@@ -132,26 +109,28 @@ public class View extends JFrame
         button7.addActionListener(al);
         button8.addActionListener(al);
         button9.addActionListener(al);
-        //
-        buttonLimpar.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent arg0)
-            {
-                lblResultado.setText("");
-                lblEqucao.setText("");
-            }
-        });
-        buttonIgual.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent arg0)
-            {
-                valorFinal = Float.parseFloat(lblResultado.getText());
-                lblResultado.setText(model.calcular(valorInicial, valorFinal, sinal));
-            }
-        });
+        buttonLimpar.addActionListener(al);
+        buttonIgual.addActionListener(al);
         //
         pack();
         setLocationRelativeTo(null);
         //
+    }
+    
+    public void limparLabels()
+    {
+        lblEqucao.setText("");
+        lblResultado.setText("");
+    }
+    
+    public void labelEquacao(String botao)
+    {
+        lblEqucao.setText(lblEqucao.getText() + botao);
+    }
+    
+    public void LabelResultado(String resul)
+    {
+        lblEqucao.setText("");
+        lblResultado.setText(resul);
     }
 }
