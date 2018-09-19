@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_G0F8YLujEeiPJYry0rLVsQ" name="DSICalculadora">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_HCgy4LujEeiPJYry0rLVsQ">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KFBhoLujEeiPJYry0rLVsQ" name="DSICalculadora">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KHjRMLujEeiPJYry0rLVsQ" name="br">
+        <packagedElement xmi:type="uml:Package" xmi:id="_KHlGYLujEeiPJYry0rLVsQ" name="facet">
+          <packagedElement xmi:type="uml:Package" xmi:id="_KHm7kLujEeiPJYry0rLVsQ" name="neto">
+            <packagedElement xmi:type="uml:Package" xmi:id="_KHnioLujEeiPJYry0rLVsQ" name="carmosito">
+              <packagedElement xmi:type="uml:Package" xmi:id="_KHowwLujEeiPJYry0rLVsQ" name="calc">
+                <packagedElement xmi:type="uml:Package" xmi:id="_KHpX0LujEeiPJYry0rLVsQ" name="control">
+                  <packagedElement xmi:type="uml:Class" xmi:id="_KHsbILujEeiPJYry0rLVsQ" name="Control" visibility="public">
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KH2MILujEeiPJYry0rLVsQ" name="view" visibility="public" isStatic="true" type="_KH1lELujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KH5PcLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new View()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KH7rsLujEeiPJYry0rLVsQ" name="model" visibility="public" isStatic="true" type="_KH7EoLujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KH9g4LujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new Model()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KIN_kLujEeiPJYry0rLVsQ" name="valorInicial" visibility="private" isUnique="false">
+                      <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KIQb0LujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>0</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KISRALujEeiPJYry0rLVsQ" name="valorAtual" visibility="private" isUnique="false">
+                      <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KIUGMLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>0</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KLYBQLujEeiPJYry0rLVsQ" name="valorAux" visibility="private" type="_KIYXoLujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KLadgLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>&quot;&quot;</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KLc5wLujEeiPJYry0rLVsQ" name="sinal" visibility="private" type="_KIYXoLujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KLeu8LujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>&quot;&quot;</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KHwskLujEeiPJYry0rLVsQ" name="Control implements ViewToControl" client="_KHsbILujEeiPJYry0rLVsQ" supplier="_KHvecLujEeiPJYry0rLVsQ" contract="_KHvecLujEeiPJYry0rLVsQ"/>
+                    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KHzI0LujEeiPJYry0rLVsQ" name="Control implements ModelToControl" client="_KHsbILujEeiPJYry0rLVsQ" supplier="_KHyhwLujEeiPJYry0rLVsQ" contract="_KHyhwLujEeiPJYry0rLVsQ"/>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KLmqwLujEeiPJYry0rLVsQ" name="main" specification="_KLgkILujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KRPYsLujEeiPJYry0rLVsQ" name="args" type="_KIYXoLujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRWtcLujEeiPJYry0rLVsQ"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRZJsLujEeiPJYry0rLVsQ" value="*"/>
+                      </ownedParameter>
+                      <language>JAVA</language>
+                      <body>&#xD;
+    view.setVisible(true);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KLtYcLujEeiPJYry0rLVsQ" name="processaNumero" specification="_KLpuELujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KRdbILujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRiToLujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRi6sLujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                      <language>JAVA</language>
+                      <body>&#xD;
+    valorAux += botao;&#xD;
+    view.labelEquacao(botao);&#xD;
+//        System.out.println(&quot;valorAux &quot; + valorAux);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KLzfELujEeiPJYry0rLVsQ" name="processaOperador" specification="_KLwbwLujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KRmlELujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRsEoLujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRsrsLujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                      <language>JAVA</language>
+                      <body>&#xD;
+    view.labelEquacao(botao);&#xD;
+    valorInicial = Double.parseDouble(valorAux);&#xD;
+    valorAux = &quot;&quot;;&#xD;
+    sinal = botao;&#xD;
+//        System.out.println(&quot;valorInicial &quot; + valorInicial);&#xD;
+//        System.out.println(&quot;sinal &quot; + sinal);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KL6MwLujEeiPJYry0rLVsQ" name="processaBotao" specification="_KL2iYLujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KRt50LujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KRwWELujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KRxkMLujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                      <language>JAVA</language>
+                      <body>&#xD;
+    //switch manipulando o conteudo do botao selecionado e disparando para o modelo&#xD;
+    switch(botao) {&#xD;
+        case &quot;0&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;1&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;2&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;3&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;4&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;5&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;6&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;7&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;8&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;9&quot;:&#xD;
+            processaNumero(botao);&#xD;
+            break;&#xD;
+        case &quot;+&quot;:&#xD;
+            processaOperador(botao);&#xD;
+            break;&#xD;
+        case &quot;-&quot;:&#xD;
+            processaOperador(botao);&#xD;
+            break;&#xD;
+        case &quot;*&quot;:&#xD;
+            processaOperador(botao);&#xD;
+            break;&#xD;
+        case &quot;/&quot;:&#xD;
+            processaOperador(botao);&#xD;
+            break;&#xD;
+        case &quot;=&quot;:&#xD;
+            valorAtual = Double.parseDouble(valorAux);&#xD;
+            //                System.out.println(&quot;valorAtual &quot; + valorAtual);&#xD;
+            model.calcular(valorInicial, valorAtual, sinal);&#xD;
+            valorAtual = 0;&#xD;
+            valorInicial = 0;&#xD;
+            valorAux = &quot;&quot;;&#xD;
+            break;&#xD;
+        case &quot;C&quot;:&#xD;
+            valorAtual = 0;&#xD;
+            valorInicial = 0;&#xD;
+            valorAux = &quot;&quot;;&#xD;
+            break;&#xD;
+        default:&#xD;
+            break;&#xD;
+    }&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KL_sULujEeiPJYry0rLVsQ" name="processaResultado" specification="_KL8pALujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KRyyULujEeiPJYry0rLVsQ" name="resul" type="_KIYXoLujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KR0ngLujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KR1OkLujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                      <language>JAVA</language>
+                      <body>&#xD;
+    view.LabelResultado(resul);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KLgkILujEeiPJYry0rLVsQ" name="main" visibility="public" isStatic="true" method="_KLmqwLujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KLjAYLujEeiPJYry0rLVsQ" name="args" type="_KIYXoLujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KLk1kLujEeiPJYry0rLVsQ"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KLlcoLujEeiPJYry0rLVsQ" value="*"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KLpuELujEeiPJYry0rLVsQ" name="processaNumero" visibility="private" method="_KLtYcLujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KLsKULujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KLwbwLujEeiPJYry0rLVsQ" name="processaOperador" visibility="private" method="_KLzfELujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KLyQ8LujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KL2iYLujEeiPJYry0rLVsQ" name="processaBotao" visibility="public" method="_KL6MwLujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KL4-oLujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KL8pALujEeiPJYry0rLVsQ" name="processaResultado" visibility="public" method="_KL_sULujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KL-eMLujEeiPJYry0rLVsQ" name="resul" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KNKJ8LujEeiPJYry0rLVsQ" name="processaResultado"/>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KNxN8LujEeiPJYry0rLVsQ" name="processaResultado">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KNycELujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KNzDILujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KNzDIbujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KONS0LujEeiPJYry0rLVsQ" name="processaResultado">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KOPvELujEeiPJYry0rLVsQ" name="resul">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KOVOoLujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KOXD0LujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KPKVELujEeiPJYry0rLVsQ" name="processaBotao"/>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KQIlcLujEeiPJYry0rLVsQ" name="processaBotao">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQLowLujEeiPJYry0rLVsQ">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KQM24LujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KQOFALujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KQo7wLujEeiPJYry0rLVsQ" name="processaBotao">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQrYALujEeiPJYry0rLVsQ" name="botao">
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KQsmILujEeiPJYry0rLVsQ" value="1"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KQt0QLujEeiPJYry0rLVsQ" value="1"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Interface" xmi:id="_KMEk0LujEeiPJYry0rLVsQ" name="ControlToModel" visibility="public">
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KMHBELujEeiPJYry0rLVsQ" name="calcular" visibility="public">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMIPMLujEeiPJYry0rLVsQ" name="valorInicial">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMKEYLujEeiPJYry0rLVsQ" name="valorFinal">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMMgoLujEeiPJYry0rLVsQ" name="sinal" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Interface" xmi:id="_KMQLALujEeiPJYry0rLVsQ" name="ControlToView" visibility="public">
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KMSAMLujEeiPJYry0rLVsQ" name="LabelResultado" visibility="private">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMTOULujEeiPJYry0rLVsQ" name="resultado" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                  </packagedElement>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Package" xmi:id="_KHuQULujEeiPJYry0rLVsQ" name="view">
+                  <packagedElement xmi:type="uml:Interface" xmi:id="_KHvecLujEeiPJYry0rLVsQ" name="ViewToControl" visibility="public">
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KPJG8LujEeiPJYry0rLVsQ" name="processaBotao" visibility="public">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQGwQLujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_KH1lELujEeiPJYry0rLVsQ" name="View" visibility="public">
+                    <generalization xmi:type="uml:Generalization" xmi:id="_KSIJgLujEeiPJYry0rLVsQ" general="_KSDRALujEeiPJYry0rLVsQ"/>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSLM0LujEeiPJYry0rLVsQ" name="model" visibility="public" isStatic="true" type="_KH7EoLujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSNpELujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new Model()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSPeQLujEeiPJYry0rLVsQ" name="control" visibility="public" isStatic="true" type="_KHsbILujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSR6gLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new Control()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSYoMLujEeiPJYry0rLVsQ" name="panel_result" visibility="private" type="_KSTvsLujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSadYLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JPanel()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KScSkLujEeiPJYry0rLVsQ" name="panel_botoes" visibility="private" type="_KSTvsLujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSeHwLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JPanel()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSkOYLujEeiPJYry0rLVsQ" name="button0" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSmDkLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;0&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSof0LujEeiPJYry0rLVsQ" name="button1" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSpt8LujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;1&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSsKMLujEeiPJYry0rLVsQ" name="button2" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSt_YLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;2&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSwboLujEeiPJYry0rLVsQ" name="button3" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KSxpwLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;3&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KSze8LujEeiPJYry0rLVsQ" name="button4" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KS1UILujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;4&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KS3JULujEeiPJYry0rLVsQ" name="button5" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KS4-gLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;5&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KS6zsLujEeiPJYry0rLVsQ" name="button6" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KS8B0LujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;6&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KS-eELujEeiPJYry0rLVsQ" name="button7" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KTA6ULujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;7&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KTD9oLujEeiPJYry0rLVsQ" name="button8" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KTFy0LujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;8&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KTHoALujEeiPJYry0rLVsQ" name="button9" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KTJdMLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;9&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KTMggLujEeiPJYry0rLVsQ" name="buttonDiv" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KTOVsLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;/&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KTQK4LujEeiPJYry0rLVsQ" name="buttonSoma" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KTSAELujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;+&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KTUcULujEeiPJYry0rLVsQ" name="buttonSub" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KTW4kLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;-&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KTYtwLujEeiPJYry0rLVsQ" name="buttonMult" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KUAY0LujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;*&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUHGgLujEeiPJYry0rLVsQ" name="buttonLimpar" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KUMmELujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;C&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUTTwLujEeiPJYry0rLVsQ" name="buttonIgual" visibility="private" type="_KSf88LujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KUW-ILujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JButton(&quot;=&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUXlMLujEeiPJYry0rLVsQ" name="panelPrincipal" visibility="private" type="_KSTvsLujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KUYMQLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JPanel()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUb2oLujEeiPJYry0rLVsQ" name="lblResultado" visibility="private" type="_KUYMQbujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KUb2obujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JLabel(&quot;&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUcdsLujEeiPJYry0rLVsQ" name="lblEqucao" visibility="private" type="_KUYMQbujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KUcdsbujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new JLabel(&quot;&quot;)</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUdEwLujEeiPJYry0rLVsQ" name="valorInicial" visibility="private" isUnique="false">
+                      <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUdEwbujEeiPJYry0rLVsQ" name="valorFinal" visibility="private" isUnique="false">
+                      <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+                    </ownedAttribute>
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KUdr0LujEeiPJYry0rLVsQ" name="sinal" visibility="private" type="_KIYXoLujEeiPJYry0rLVsQ" isUnique="false"/>
+                    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KSJXoLujEeiPJYry0rLVsQ" name="View implements ControlToView" client="_KH1lELujEeiPJYry0rLVsQ" supplier="_KMQLALujEeiPJYry0rLVsQ" contract="_KMQLALujEeiPJYry0rLVsQ"/>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUm1wLujEeiPJYry0rLVsQ" name="View" specification="_KUeS4LujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    setMinimumSize(new Dimension(350, 450));&#xD;
+    setDefaultCloseOperation(EXIT_ON_CLOSE);&#xD;
+    setTitle(&quot;Calc Facetzika&quot;);&#xD;
+    //&#xD;
+    getContentPane().add(panelPrincipal, BorderLayout.CENTER);&#xD;
+    panelPrincipal.setLayout(new BorderLayout(0, 0));&#xD;
+    panel_result.setBorder(new EmptyBorder(8, 8, 8, 8));&#xD;
+    panel_result.setBackground(Color.WHITE);&#xD;
+    panelPrincipal.add(panel_result, BorderLayout.NORTH);&#xD;
+    panel_result.setLayout(new MigLayout(&quot;&quot;, &quot;[318px]&quot;, &quot;[30px][30px]&quot;));&#xD;
+    lblEqucao.setFont(new Font(&quot;Yu Gothic Medium&quot;, Font.PLAIN, 15));&#xD;
+    lblEqucao.setHorizontalAlignment(SwingConstants.RIGHT);&#xD;
+    panel_result.add(lblEqucao, &quot;cell 0 0,growx,aligny top&quot;);&#xD;
+    lblResultado.setFont(new Font(&quot;Yu Gothic Medium&quot;, Font.PLAIN, 15));&#xD;
+    lblResultado.setHorizontalAlignment(SwingConstants.RIGHT);&#xD;
+    panel_result.add(lblResultado, &quot;cell 0 1,growx,aligny top&quot;);&#xD;
+    panel_botoes.setBorder(new EmptyBorder(7, 7, 7, 7));&#xD;
+    panelPrincipal.add(panel_botoes, BorderLayout.CENTER);&#xD;
+    panel_botoes.setLayout(new GridLayout(4, 4, 5, 5));&#xD;
+    panel_botoes.add(button7);&#xD;
+    panel_botoes.add(button8);&#xD;
+    panel_botoes.add(button9);&#xD;
+    panel_botoes.add(buttonDiv);&#xD;
+    panel_botoes.add(button4);&#xD;
+    panel_botoes.add(button5);&#xD;
+    panel_botoes.add(button6);&#xD;
+    panel_botoes.add(buttonMult);&#xD;
+    panel_botoes.add(button1);&#xD;
+    panel_botoes.add(button2);&#xD;
+    panel_botoes.add(button3);&#xD;
+    panel_botoes.add(buttonSub);&#xD;
+    panel_botoes.add(buttonLimpar);&#xD;
+    panel_botoes.add(button0);&#xD;
+    panel_botoes.add(buttonIgual);&#xD;
+    panel_botoes.add(buttonSoma);&#xD;
+    //&#xD;
+    ActionListener al = new ActionListener() {&#xD;
+&#xD;
+        @Override&#xD;
+        public void actionPerformed(ActionEvent arg0) {&#xD;
+            String botao = ((JButton) arg0.getSource()).getText();&#xD;
+            control.processaBotao(botao);&#xD;
+        }&#xD;
+    };&#xD;
+    buttonDiv.addActionListener(al);&#xD;
+    buttonMult.addActionListener(al);&#xD;
+    buttonSub.addActionListener(al);&#xD;
+    buttonSoma.addActionListener(al);&#xD;
+    button0.addActionListener(al);&#xD;
+    button1.addActionListener(al);&#xD;
+    button2.addActionListener(al);&#xD;
+    button3.addActionListener(al);&#xD;
+    button4.addActionListener(al);&#xD;
+    button5.addActionListener(al);&#xD;
+    button6.addActionListener(al);&#xD;
+    button7.addActionListener(al);&#xD;
+    button8.addActionListener(al);&#xD;
+    button9.addActionListener(al);&#xD;
+    buttonLimpar.addActionListener(al);&#xD;
+    buttonIgual.addActionListener(al);&#xD;
+    //&#xD;
+    pack();&#xD;
+    setLocationRelativeTo(null);&#xD;
+//&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KUwmwLujEeiPJYry0rLVsQ" name="limparLabels" specification="_KUruQLujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    lblEqucao.setText(&quot;&quot;);&#xD;
+    lblResultado.setText(&quot;&quot;);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KU7l4LujEeiPJYry0rLVsQ" name="labelEquacao" specification="_KU37gLujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    lblEqucao.setText(lblEqucao.getText() + botao);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KU_3ULujEeiPJYry0rLVsQ" name="LabelResultado" specification="_KU-CILujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    lblEqucao.setText(&quot;&quot;);&#xD;
+    lblResultado.setText(resul);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KUeS4LujEeiPJYry0rLVsQ" name="View" visibility="public" method="_KUm1wLujEeiPJYry0rLVsQ"/>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KUruQLujEeiPJYry0rLVsQ" name="limparLabels" visibility="public" method="_KUwmwLujEeiPJYry0rLVsQ"/>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KU37gLujEeiPJYry0rLVsQ" name="labelEquacao" visibility="public" method="_KU7l4LujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KU5wsLujEeiPJYry0rLVsQ" name="botao" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KU-CILujEeiPJYry0rLVsQ" name="LabelResultado" visibility="public" method="_KU_3ULujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KU_QQLujEeiPJYry0rLVsQ" name="resul" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                  </packagedElement>
+                </packagedElement>
+                <packagedElement xmi:type="uml:Package" xmi:id="_KHxToLujEeiPJYry0rLVsQ" name="model">
+                  <packagedElement xmi:type="uml:Interface" xmi:id="_KHyhwLujEeiPJYry0rLVsQ" name="ModelToControl" visibility="public">
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KNHGoLujEeiPJYry0rLVsQ" name="processaResultado" visibility="private">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KNwm4LujEeiPJYry0rLVsQ" name="resul" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_KH7EoLujEeiPJYry0rLVsQ" name="Model" visibility="public">
+                    <ownedAttribute xmi:type="uml:Property" xmi:id="_KMZU8LujEeiPJYry0rLVsQ" name="control" visibility="public" isStatic="true" type="_KHsbILujEeiPJYry0rLVsQ" isUnique="false">
+                      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_KMbxMLujEeiPJYry0rLVsQ" name="defaultValue">
+                        <language>JAVA</language>
+                        <body>new Control()</body>
+                      </defaultValue>
+                    </ownedAttribute>
+                    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_KMXfwLujEeiPJYry0rLVsQ" name="Model implements ControlToModel" client="_KH7EoLujEeiPJYry0rLVsQ" supplier="_KMEk0LujEeiPJYry0rLVsQ" contract="_KMEk0LujEeiPJYry0rLVsQ"/>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KMie4LujEeiPJYry0rLVsQ" name="soma" specification="_KMdmYLujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    double resul = 0;&#xD;
+    resul = num1 + num2;&#xD;
+    return resul;&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KMqasLujEeiPJYry0rLVsQ" name="subtracao" specification="_KMk7ILujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    double resul = 0;&#xD;
+    resul = num1 - num2;&#xD;
+    return resul;&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KMxIYLujEeiPJYry0rLVsQ" name="multiplicacao" specification="_KMsP4LujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    double resul = 0;&#xD;
+    resul = num1 * num2;&#xD;
+    return resul;&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KM32ELujEeiPJYry0rLVsQ" name="divisao" specification="_KMy9kLujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    double resul = 0;&#xD;
+    if (num2 == 0) {&#xD;
+        System.out.println(&quot;Erro! Divisão por zero&quot;);&#xD;
+    }&#xD;
+    resul = num1 / num2;&#xD;
+    return resul;&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KNBnELujEeiPJYry0rLVsQ" name="calcular" specification="_KM65YLujEeiPJYry0rLVsQ">
+                      <language>JAVA</language>
+                      <body>&#xD;
+    String resul = &quot;&quot;;&#xD;
+    switch(sinal) {&#xD;
+        case &quot;+&quot;:&#xD;
+            resul = String.valueOf(soma(valorInicial, valorFinal));&#xD;
+            break;&#xD;
+        case &quot;-&quot;:&#xD;
+            resul = String.valueOf(subtracao(valorInicial, valorFinal));&#xD;
+            break;&#xD;
+        case &quot;*&quot;:&#xD;
+            resul = String.valueOf(multiplicacao(valorInicial, valorFinal));&#xD;
+            break;&#xD;
+        case &quot;/&quot;:&#xD;
+            if (divisao(valorInicial, valorFinal) == Float.POSITIVE_INFINITY || divisao(valorInicial, valorFinal) == Float.NEGATIVE_INFINITY) {&#xD;
+                resul = &quot;\&quot;Não é possivel dividir por zero!&quot;;&#xD;
+            } else {&#xD;
+                resul = String.valueOf(divisao(valorInicial, valorFinal));&#xD;
+            }&#xD;
+            break;&#xD;
+        default:&#xD;
+            break;&#xD;
+    }&#xD;
+    control.processaResultado(resul);&#xD;
+</body>
+                    </ownedBehavior>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KMdmYLujEeiPJYry0rLVsQ" name="soma" visibility="private" method="_KMie4LujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMe0gLujEeiPJYry0rLVsQ" direction="return">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMgCoLujEeiPJYry0rLVsQ" name="num1">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMhQwLujEeiPJYry0rLVsQ" name="num2">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KMk7ILujEeiPJYry0rLVsQ" name="subtracao" visibility="private" method="_KMqasLujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMliMLujEeiPJYry0rLVsQ" direction="return">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMnXYLujEeiPJYry0rLVsQ" name="num1">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMolgLujEeiPJYry0rLVsQ" name="num2">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KMsP4LujEeiPJYry0rLVsQ" name="multiplicacao" visibility="private" method="_KMxIYLujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMs28LujEeiPJYry0rLVsQ" direction="return">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMusILujEeiPJYry0rLVsQ" name="num1">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KMv6QLujEeiPJYry0rLVsQ" name="num2">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KMy9kLujEeiPJYry0rLVsQ" name="divisao" visibility="private" method="_KM32ELujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KM0LsLujEeiPJYry0rLVsQ" direction="return">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KM1Z0LujEeiPJYry0rLVsQ" name="num1">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KM3PALujEeiPJYry0rLVsQ" name="num2">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_KM65YLujEeiPJYry0rLVsQ" name="calcular" visibility="public" method="_KNBnELujEeiPJYry0rLVsQ">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KM8HgLujEeiPJYry0rLVsQ" name="valorInicial">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KM9VoLujEeiPJYry0rLVsQ" name="valorFinal">
+                        <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+                      </ownedParameter>
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KNAY8LujEeiPJYry0rLVsQ" name="sinal" type="_KIYXoLujEeiPJYry0rLVsQ"/>
+                    </ownedOperation>
+                  </packagedElement>
+                </packagedElement>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KIV7YLujEeiPJYry0rLVsQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KIWicLujEeiPJYry0rLVsQ" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_KIXwkLujEeiPJYry0rLVsQ" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_KIYXoLujEeiPJYry0rLVsQ" name="String"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KR_moLujEeiPJYry0rLVsQ" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KSA0wLujEeiPJYry0rLVsQ" name="javax">
+        <packagedElement xmi:type="uml:Package" xmi:id="_KSCC4LujEeiPJYry0rLVsQ" name="swing">
+          <packagedElement xmi:type="uml:Class" xmi:id="_KSDRALujEeiPJYry0rLVsQ" name="JFrame"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_KSTvsLujEeiPJYry0rLVsQ" name="JPanel"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_KSf88LujEeiPJYry0rLVsQ" name="JButton"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_KUYMQbujEeiPJYry0rLVsQ" name="JLabel"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KGzDQLujEeiPJYry0rLVsQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KG0RYLujEeiPJYry0rLVsQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KHJBgLujEeiPJYry0rLVsQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KHKPoLujEeiPJYry0rLVsQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_KHZgMLujEeiPJYry0rLVsQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_KHdKkLujEeiPJYry0rLVsQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_KLVlALujEeiPJYry0rLVsQ" name="java.lang.String" base_Classifier="_KIYXoLujEeiPJYry0rLVsQ"/>
+  <PapyrusJava:External xmi:id="_KSG7YLujEeiPJYry0rLVsQ" name="javax.swing.JFrame" base_Classifier="_KSDRALujEeiPJYry0rLVsQ"/>
+  <PapyrusJava:External xmi:id="_KSWzALujEeiPJYry0rLVsQ" name="javax.swing.JPanel" base_Classifier="_KSTvsLujEeiPJYry0rLVsQ"/>
+  <PapyrusJava:External xmi:id="_KSjAQLujEeiPJYry0rLVsQ" name="javax.swing.JButton" base_Classifier="_KSf88LujEeiPJYry0rLVsQ"/>
+  <PapyrusJava:External xmi:id="_KUbPkLujEeiPJYry0rLVsQ" name="javax.swing.JLabel" base_Classifier="_KUYMQbujEeiPJYry0rLVsQ"/>
+  <standard:Create xmi:id="_KUhWMLujEeiPJYry0rLVsQ" base_BehavioralFeature="_KUeS4LujEeiPJYry0rLVsQ"/>
+</xmi:XMI>
