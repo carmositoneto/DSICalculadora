@@ -14,18 +14,27 @@ public class Control implements ViewToControl, ModelToControl
     private String valorAux = "";
     private String sinal = "";
     
+    /** Método principal do projeto Calculadora
+     * @param args */
     public static void main(String[] args)
     {
         view.setVisible(true);
     }
     
-    private void processaNumero(String botao)
+    /** Método onde será processado o botão pressionado, que neste caso é um
+     * operando e salva este número em uma variável auxiliar
+     * @param botao recebe o valor da botão pressionado */
+    private void processaOperando(String botao)
     {
         valorAux += botao;
         view.labelEquacao(botao);
         //        System.out.println("valorAux " + valorAux);
     }
     
+    /** Método onde será processado o botão pressionado, que neste caso é um
+     * operador e salva este sinal em uma variável auxiliar, transfere o valor
+     * que esta na variável 'valorAux' para a variável 'valorInicial'
+     * @param botao recebe o valor da botão pressionado */
     private void processaOperador(String botao)
     {
         view.labelEquacao(botao);
@@ -36,41 +45,44 @@ public class Control implements ViewToControl, ModelToControl
         //        System.out.println("sinal " + sinal);
     }
     
-    @Override
+    /** Este método recebe o botão pressionado e analisa no 'switch' se é um
+     * operador ou um operando, para ver se irá chamar o método
+     * 'processaOperador' ou 'processaOperando'
+     * @param botao recebe o valor da botão pressionado */
     public void processaBotao(String botao)
     {
         //switch manipulando o conteudo do botao selecionado e disparando para o modelo
         switch (botao)
         {
             case "0":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "1":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "2":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "3":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "4":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "5":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "6":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "7":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "8":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "9":
-                processaNumero(botao);
+                processaOperando(botao);
                 break;
             case "+":
                 processaOperador(botao);
@@ -102,6 +114,9 @@ public class Control implements ViewToControl, ModelToControl
         }
     }
     
+    /** Este método íra mandar para a Classe 'View' para no método mandar para a
+     * label demonstrar o resultado ao usuário
+     * @param resul recebe o resultado da operação */
     @Override
     public void processaResultado(String resul)
     {

@@ -6,28 +6,48 @@ import br.facet.neto.carmosito.calc.control.ControlToModel;
 public class Model implements ControlToModel
 {
     public static Control control = new Control();
-    
+    /**
+     * O metódo serve para, ao receber os parametros calcular a soma dos mesmos e retornar o resultado  
+     * @param num1 primeiro valor pressionado
+     * @param num2 segundo valor pressionado
+     * @return retorna o valor da soma dos parametros 
+     */
     private double soma(double num1, double num2)
     {
         double resul = 0;
         resul = num1 + num2;
         return resul;
     }
-    
+    /**
+     * O metódo serve para, ao receber os parametros calcular a subtração dos mesmos e retornar o resultado
+     * @param num1 primeiro valor pressionado
+     * @param num2 segundo valor pressionado
+     * @return retorna o valor da soma dos parametros
+     */
     private double subtracao(double num1, double num2)
     {
         double resul = 0;
         resul = num1 - num2;
         return resul;
     }
-    
+    /**
+     * O metódo serve para, ao receber os parametros calcular a multiplicação dos mesmos e retornar o resultado
+     * @param num1 primeiro valor pressionado
+     * @param num2 segundo valor pressionado
+     * @return retorna o valor da soma dos parametros
+     */
     private double multiplicacao(double num1, double num2)
     {
         double resul = 0;
         resul = num1 * num2;
         return resul;
     }
-    
+    /**
+     * O metódo serve para, ao receber os parametros calcular a divisao dos mesmos e retornar o resultado
+     * @param num1 primeiro valor pressionado
+     * @param num2 segundo valor pressionado
+     * @return retorna o valor da soma dos parametros
+     */
     private double divisao(double num1, double num2)
     {
         double resul = 0;

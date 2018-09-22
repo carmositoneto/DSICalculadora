@@ -48,6 +48,8 @@ public class View extends JFrame implements ControlToView
     float valorInicial, valorFinal;
     String sinal;
     
+    /** Construtor da classe View, onde serão definidos os argumentos de botoes
+     * e paineis */
     public View()
     {
         setMinimumSize(new Dimension(350, 450));
@@ -117,17 +119,24 @@ public class View extends JFrame implements ControlToView
         //
     }
     
+    /** Método onde irá limpar o conteúdo das labels equação e resultado */
     public void limparLabels()
     {
         lblEqucao.setText("");
         lblResultado.setText("");
     }
     
+    /** @param botao é um parametro onde recebe o conteudo dos buttons
+     *        pressionados e neste método escreve o texto passado por parâmetro
+     *        na label Equação */
     public void labelEquacao(String botao)
     {
         lblEqucao.setText(lblEqucao.getText() + botao);
     }
     
+    /** @param botao é um parametro onde recebe o conteudo dos buttons
+     *        pressionados e neste método escreve o texto passado por parâmetro
+     *        na label Resultado */
     public void LabelResultado(String resul)
     {
         lblEqucao.setText("");
