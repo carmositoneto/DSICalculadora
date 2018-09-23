@@ -7,12 +7,19 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import org.apache.commons.configuration2.XMLConfiguration;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
+import org.apache.commons.configuration2.io.FileHandler;
 import br.facet.neto.carmosito.calc.control.Control;
 import br.facet.neto.carmosito.calc.control.ControlToView;
 import br.facet.neto.carmosito.calc.model.Model;
@@ -52,6 +59,7 @@ public class View extends JFrame implements ControlToView
      * e paineis */
     public View()
     {
+        //
         setMinimumSize(new Dimension(350, 450));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Calc Facetzika");
@@ -117,6 +125,61 @@ public class View extends JFrame implements ControlToView
         pack();
         setLocationRelativeTo(null);
         //
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent evt)
+            {
+                if (JOptionPane.showConfirmDialog(null, "Deseja sair") == JOptionPane.OK_OPTION)
+                {
+                    salvarConfig();
+                    System.exit(0);
+                }
+            }
+        });
+    }
+    
+    public void salvarConfig()
+    {
+        try
+        {
+            File file = new File("Sorteador.config.xml");
+            file.createNewFile();
+            //
+            //
+            XMLConfiguration config = new XMLConfiguration();
+            //
+            config.addProperty("sorteiosimples.ssmax", lblResultado.getText());
+            FileHandler handler = new FileHandler(config);
+            handler.save(file);
+            System.out.println("Deu boa!!");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    public void carregarConfig()
+    {
+        try
+        {
+            File file = new File("sorteador.config.xml");
+            //
+            //
+            Configurations configs = new Configurations();
+            XMLConfiguration config = configs.xml(file);
+            //
+            //
+            String ssmax = config.getString("sorteiosimples.ssmax");
+            //
+            lblResultado.setText(ssmax);
+            System.out.println("Ta foda ein tio");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
     
     /** Método onde irá limpar o conteúdo das labels equação e resultado */
