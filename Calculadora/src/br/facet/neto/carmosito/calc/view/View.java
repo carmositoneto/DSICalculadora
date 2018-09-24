@@ -24,8 +24,11 @@ import br.facet.neto.carmosito.calc.control.Control;
 import br.facet.neto.carmosito.calc.control.ControlToView;
 import br.facet.neto.carmosito.calc.model.Model;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
 
-/** @author Carmo Uma classe onde é criado as interfaces gráficas do projeto
+/** @author Carmo Uma classe onde eh criado as interfaces graficas do projeto
  *         calculadora */
 public class View extends JFrame implements ControlToView
 {
@@ -54,8 +57,13 @@ public class View extends JFrame implements ControlToView
     JLabel lblEqucao = new JLabel("");
     float valorInicial, valorFinal;
     String sinal;
+    private final JMenuBar menuBar = new JMenuBar();
+    private final JMenu mnMenu = new JMenu("Menu");
+    private final JMenuItem mntmCarregar = new JMenuItem("Carregar");
+    private final JMenuItem mntmSalvar = new JMenuItem("Salvar");
+    private final JMenuItem mntmSair = new JMenuItem("Sair");
     
-    /** Construtor da classe View, onde serão definidos os argumentos de botoes
+    /** Construtor da classe View, onde serao definidos os argumentos de botoes
      * e paineis */
     public View()
     {
@@ -78,6 +86,11 @@ public class View extends JFrame implements ControlToView
         panel_result.add(lblResultado, "cell 0 1,growx,aligny top");
         panel_botoes.setBorder(new EmptyBorder(7, 7, 7, 7));
         panelPrincipal.add(panel_botoes, BorderLayout.CENTER);
+        setJMenuBar(menuBar);
+        menuBar.add(mnMenu);
+        mnMenu.add(mntmCarregar);
+        mnMenu.add(mntmSalvar);
+        mnMenu.add(mntmSair);
         panel_botoes.setLayout(new GridLayout(4, 4, 5, 5));
         panel_botoes.add(button7);
         panel_botoes.add(button8);
@@ -125,31 +138,49 @@ public class View extends JFrame implements ControlToView
         pack();
         setLocationRelativeTo(null);
         //
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter()
+        ActionListener carregar = new ActionListener()
         {
-            public void windowClosing(WindowEvent evt)
+            @Override
+            public void actionPerformed(ActionEvent arg0)
             {
-                if (JOptionPane.showConfirmDialog(null, "Deseja sair") == JOptionPane.OK_OPTION)
-                {
-                    salvarConfig();
-                    System.exit(0);
-                }
+                // TODO Auto-generated method stub
+                carregarConfig();
             }
-        });
+        };
+        mntmCarregar.addActionListener(carregar);
+        ActionListener salvar = new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent arg0)
+            {
+                // TODO Auto-generated method stub
+                salvarConfig();
+            }
+        };
+        mntmSalvar.addActionListener(salvar);
+        ActionListener sair = new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent arg0)
+            {
+                // TODO Auto-generated method stub
+                dispose();
+            }
+        };
+        mntmSair.addActionListener(sair);
     }
     
     public void salvarConfig()
     {
         try
         {
-            File file = new File("Sorteador.config.xml");
+            File file = new File("Calc.config.xml");
             file.createNewFile();
             //
             //
             XMLConfiguration config = new XMLConfiguration();
             //
-            config.addProperty("sorteiosimples.ssmax", lblResultado.getText());
+            config.addProperty("calculadora.resultado", lblResultado.getText());
             FileHandler handler = new FileHandler(config);
             handler.save(file);
             System.out.println("Deu boa!!");
@@ -164,14 +195,14 @@ public class View extends JFrame implements ControlToView
     {
         try
         {
-            File file = new File("sorteador.config.xml");
+            File file = new File("Calc.config.xml");
             //
             //
             Configurations configs = new Configurations();
             XMLConfiguration config = configs.xml(file);
             //
             //
-            String ssmax = config.getString("sorteiosimples.ssmax");
+            String ssmax = config.getString("calculadora.resultado", "");
             //
             lblResultado.setText(ssmax);
             System.out.println("Ta foda ein tio");
@@ -182,23 +213,23 @@ public class View extends JFrame implements ControlToView
         }
     }
     
-    /** Método onde irá limpar o conteúdo das labels equação e resultado */
+    /** Metodo onde ira limpar o conteudo das labels equacao e resultado */
     public void limparLabels()
     {
         lblEqucao.setText("");
         lblResultado.setText("");
     }
     
-    /** @param botao é um parametro onde recebe o conteudo dos buttons
-     *        pressionados e neste método escreve o texto passado por parâmetro
-     *        na label Equação */
+    /** @param botao eh um parametro onde recebe o conteudo dos buttons
+     *        pressionados e neste metodo escreve o texto passado por parametro
+     *        na label Equacao */
     public void labelEquacao(String botao)
     {
         lblEqucao.setText(lblEqucao.getText() + botao);
     }
     
-    /** @param botao é um parametro onde recebe o conteudo dos buttons
-     *        pressionados e neste método escreve o texto passado por parâmetro
+    /** @param botao eh um parametro onde recebe o conteudo dos buttons
+     *        pressionados e neste metodo escreve o texto passado por parametro
      *        na label Resultado */
     public void LabelResultado(String resul)
     {

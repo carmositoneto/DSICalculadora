@@ -7,17 +7,17 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="Calculadora/miglayout15-swing.jar"/>
-	<classpathentry kind="lib" path="Calculadora/libs/commons-beanutils-1.9.3.jar" sourcepath="Calculadora/libs/commons-beanutils-1.9.3-sources.jar">
+	<classpathentry kind="lib" path="Calculadora/libs/commons-beanutils-1.9.3.jar" sourcepath="C:/Users/Carmo/OneDrive/FACULDADE FACET/6º SEMESTRE/4ª DESENVOLVIMENTO DE SISTEMAS I/Desenvolvimento I/DSICalculadora/Calculadora/libs/commons-beanutils-1.9.3-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/Carmo/OneDrive/FACULDADE%20FACET/6º%20SEMESTRE/4ª%20DESENVOLVIMENTO%20DE%20SISTEMAS%20I/Desenvolvimento%20I/DSICalculadora/Calculadora/libs/commons-beanutils-1.9.3-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="Calculadora/libs/commons-configuration2-2.2.jar" sourcepath="Calculadora/libs/commons-configuration2-2.2-sources.jar">
+	<classpathentry kind="lib" path="Calculadora/libs/commons-configuration2-2.2.jar" sourcepath="C:/Users/Carmo/OneDrive/FACULDADE FACET/6º SEMESTRE/4ª DESENVOLVIMENTO DE SISTEMAS I/Desenvolvimento I/DSICalculadora/Calculadora/libs/commons-configuration2-2.2-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/Carmo/OneDrive/FACULDADE%20FACET/6º%20SEMESTRE/4ª%20DESENVOLVIMENTO%20DE%20SISTEMAS%20I/Desenvolvimento%20I/DSICalculadora/Calculadora/libs/commons-configuration2-2.2-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="Calculadora/libs/commons-lang3-3.7.jar" sourcepath="Calculadora/libs/commons-lang3-3.7-sources.jar">
+	<classpathentry kind="lib" path="Calculadora/libs/commons-lang3-3.7.jar" sourcepath="C:/Users/Carmo/OneDrive/FACULDADE FACET/6º SEMESTRE/4ª DESENVOLVIMENTO DE SISTEMAS I/Desenvolvimento I/DSICalculadora/Calculadora/libs/commons-lang3-3.7-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/Carmo/OneDrive/FACULDADE%20FACET/6º%20SEMESTRE/4ª%20DESENVOLVIMENTO%20DE%20SISTEMAS%20I/Desenvolvimento%20I/DSICalculadora/Calculadora/libs/commons-lang3-3.7-javadoc.jar!/"/>
 		</attributes>
@@ -27,6 +27,5 @@
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/Carmo/OneDrive/FACULDADE%20FACET/6º%20SEMESTRE/4ª%20DESENVOLVIMENTO%20DE%20SISTEMAS%20I/Desenvolvimento%20I/DSICalculadora/Calculadora/libs/commons-logging-1.2-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="Calculadora/libs/ini4j-0.5.4.jar"/>
 	<classpathentry kind="output" path="Calculadora/bin"/>
 </classpath>
