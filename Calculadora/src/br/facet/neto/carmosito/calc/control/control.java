@@ -14,9 +14,8 @@ public class control implements ViewToControl, ModelToControl
     private String valorAux = "";
     private String sinal = "";
     
-    /** 
-     * metodo principal do projeto Calculadora
-     * @param args eh o parametro padrao*/
+    /** metodo principal do projeto Calculadora
+     * @param args eh o parametro padrao */
     public static void main(String[] args)
     {
         view.setVisible(true);

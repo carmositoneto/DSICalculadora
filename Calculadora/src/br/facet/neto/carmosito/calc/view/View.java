@@ -28,8 +28,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 
-/** 
- * @author Carmo Uma classe onde eh criado as interfaces graficas do projeto
+/** @author Carmo Uma classe onde eh criado as interfaces graficas do projeto
  *         calculadora */
 public class View extends JFrame implements ControlToView
 {
@@ -184,7 +183,6 @@ public class View extends JFrame implements ControlToView
             config.addProperty("calculadora.resultado", lblResultado.getText());
             FileHandler handler = new FileHandler(config);
             handler.save(file);
-            System.out.println("Deu boa!!");
         }
         catch (Exception e)
         {
@@ -206,7 +204,6 @@ public class View extends JFrame implements ControlToView
             String ssmax = config.getString("calculadora.resultado", "");
             //
             lblResultado.setText(ssmax);
-            System.out.println("Ta foda ein tio");
         }
         catch (Exception e)
         {

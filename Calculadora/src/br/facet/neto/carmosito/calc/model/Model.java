@@ -7,8 +7,7 @@ public class Model implements ControlToModel
 {
     public static control control = new control();
     
-    /** 
-     * o metedo serve para, ao receber os parametros calcular a soma dos mesmos
+    /** o metedo serve para, ao receber os parametros calcular a soma dos mesmos
      * e retornar o resultado
      * @param num1 primeiro valor pressionado
      * @param num2 segundo valor pressionado
