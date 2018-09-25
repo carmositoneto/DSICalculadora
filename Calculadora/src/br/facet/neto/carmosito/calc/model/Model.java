@@ -1,13 +1,13 @@
 package br.facet.neto.carmosito.calc.model;
 
-import br.facet.neto.carmosito.calc.control.Control;
+import br.facet.neto.carmosito.calc.control.control;
 import br.facet.neto.carmosito.calc.control.ControlToModel;
 
 public class Model implements ControlToModel
 {
-    public static Control control = new Control();
+    public static control control = new control();
     
-    /** O metódo serve para, ao receber os parametros calcular a soma dos mesmos
+    /** O metï¿½do serve para, ao receber os parametros calcular a soma dos mesmos
      * e retornar o resultado
      * @param num1 primeiro valor pressionado
      * @param num2 segundo valor pressionado
@@ -19,7 +19,7 @@ public class Model implements ControlToModel
         return resul;
     }
     
-    /** O metódo serve para, ao receber os parametros calcular a subtração dos
+    /** O metï¿½do serve para, ao receber os parametros calcular a subtraï¿½ï¿½o dos
      * mesmos e retornar o resultado
      * @param num1 primeiro valor pressionado
      * @param num2 segundo valor pressionado
@@ -31,7 +31,7 @@ public class Model implements ControlToModel
         return resul;
     }
     
-    /** O metódo serve para, ao receber os parametros calcular a multiplicação
+    /** O metï¿½do serve para, ao receber os parametros calcular a multiplicaï¿½ï¿½o
      * dos mesmos e retornar o resultado
      * @param num1 primeiro valor pressionado
      * @param num2 segundo valor pressionado
@@ -43,7 +43,7 @@ public class Model implements ControlToModel
         return resul;
     }
     
-    /** O metódo serve para, ao receber os parametros calcular a divisao dos
+    /** O metï¿½do serve para, ao receber os parametros calcular a divisao dos
      * mesmos e retornar o resultado
      * @param num1 primeiro valor pressionado
      * @param num2 segundo valor pressionado
@@ -53,17 +53,17 @@ public class Model implements ControlToModel
         double resul = 0;
         if (num2 == 0)
         {
-            System.out.println("Erro! Divisão por zero");
+            System.out.println("Erro! Divisï¿½o por zero");
         }
         resul = num1 / num2;
         return resul;
     }
     
-    /** @author Carmo Método onde é realizada a chamada para a Classe
-     *         Calculadora, onde será efetuado o cálculo pedido.
-     * @param O primeiro parâmetro pedido é o valor que será pressionado antes
-     *        do sinal de operação e o segundo parâmetro é o valor pressionado
-     *        após o sinal da operção. */
+    /** @author Carmo Mï¿½todo onde ï¿½ realizada a chamada para a Classe
+     *         Calculadora, onde serï¿½ efetuado o cï¿½lculo pedido.
+     * @param O primeiro parï¿½metro pedido ï¿½ o valor que serï¿½ pressionado antes
+     *        do sinal de operaï¿½ï¿½o e o segundo parï¿½metro ï¿½ o valor pressionado
+     *        apï¿½s o sinal da operï¿½ï¿½o. */
     public void calcular(double valorInicial, double valorFinal, String sinal)
     {
         String resul = "";
@@ -81,7 +81,7 @@ public class Model implements ControlToModel
             case "/":
                 if (divisao(valorInicial, valorFinal) == Float.POSITIVE_INFINITY || divisao(valorInicial, valorFinal) == Float.NEGATIVE_INFINITY)
                 {
-                    resul = "\"Não é possivel dividir por zero!";
+                    resul = "\"Nï¿½o ï¿½ possivel dividir por zero!";
                 }
                 else
                 {

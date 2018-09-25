@@ -20,7 +20,7 @@ import javax.swing.border.EmptyBorder;
 import org.apache.commons.configuration2.XMLConfiguration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.io.FileHandler;
-import br.facet.neto.carmosito.calc.control.Control;
+import br.facet.neto.carmosito.calc.control.control;
 import br.facet.neto.carmosito.calc.control.ControlToView;
 import br.facet.neto.carmosito.calc.model.Model;
 import net.miginfocom.swing.MigLayout;
@@ -33,7 +33,7 @@ import javax.swing.JMenu;
 public class View extends JFrame implements ControlToView
 {
     public static Model model = new Model();
-    public static Control control = new Control();
+    public static control control = new control();
     JPanel panel_result = new JPanel();
     JPanel panel_botoes = new JPanel();
     JButton button0 = new JButton("0");
