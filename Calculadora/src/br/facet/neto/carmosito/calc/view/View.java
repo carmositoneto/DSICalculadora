@@ -228,7 +228,7 @@ public class View extends JFrame implements ControlToView
         lblEqucao.setText(lblEqucao.getText() + botao);
     }
     
-    /** @param botao eh um parametro onde recebe o conteudo dos buttons
+    /** @param resul eh um parametro onde recebe o conteudo dos buttons
      *        pressionados e neste metodo escreve o texto passado por parametro
      *        na label Resultado */
     public void LabelResultado(String resul)
